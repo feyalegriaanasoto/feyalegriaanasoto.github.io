@@ -1,0 +1,330 @@
+/* ===== ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== HEADER CON LOGO (IMAGEN Y TEXTO LADO A LADO) ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #d10a10;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navegación Hamburguesa CORREGIDA */
+nav {
+    position: relative;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1001;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background: #d10a10;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #d10a10;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-menu a:hover {
+    background-color: #d10a10;
+    color: white;
+}
+
+/* ===== CONTENIDO PRINCIPAL Y SECCIONES ===== */
+.manual-container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-block {
+    background: #fbebeb;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #d10a10;
+}
+
+.section-block > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.text-content-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.imagen-container {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.imagen-section {
+    max-width: 100%;
+    text-align: center;
+}
+
+.section-block h2 {
+    color: #d10a10;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fbebeb;
+    padding-bottom: 10px;
+}
+
+.section-block h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin: 25px 0 15px 0;
+}
+
+.section-block p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.section-block ul, 
+.section-block ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.section-block li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Secciones con fondo oscuro */
+.dark-bg {
+    background-color: #fbebeb;
+    border-left: 4px solid #d10a10;
+}
+
+/* Nota importante */
+.note {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-left: 5px solid #ffc107;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Estilos para las imágenes */
+.imagen-manual,
+.imagen-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.imagen-manual img,
+.imagen-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE ===== */
+@media (max-width: 768px) {
+    /* Header responsive */
+    header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    /* Menú hamburguesa CORREGIDO - Menú flotante compacto */
+    .menu-icon {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        width: 250px; /* Ancho fijo para el menú flotante */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        border-radius: 8px;
+        padding: 10px 0;
+        text-align: left;
+        z-index: 1000;
+        border: 1px solid #e0e0e0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .nav-menu a {
+        padding: 12px 20px;
+        border-radius: 0;
+        display: block;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+    
+    .nav-menu a:hover {
+        background-color: #d10a10;
+        color: white;
+    }
+    
+    /* Mostrar menú cuando el checkbox está checked */
+    #menu-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+    
+    /* QUITAMOS la animación de la X - el ícono hamburguesa se mantiene igual */
+    /* No hay transformaciones para quitar la animación de la X */
+    
+    /* Contenido responsive */
+    .manual-container {
+        padding: 20px 15px;
+    }
+    
+    .section-block {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .section-block h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-block h3 {
+        font-size: 1.2rem;
+    }
+    
+    .text-content-wrapper,
+    .imagen-container {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+    
+    .logo img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 1rem;
+    }
+    
+    .manual-container {
+        padding: 15px 10px;
+    }
+    
+    .section-block {
+        padding: 15px;
+    }
+    
+    .section-block h2 {
+        font-size: 1.3rem;
+    }
+    
+    /* Menú más pequeño en móviles muy pequeños */
+    .nav-menu {
+        width: 220px;
+    }
+    
+    .nav-menu a {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+}
