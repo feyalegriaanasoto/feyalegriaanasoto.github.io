@@ -156,7 +156,6 @@ nav {
     font-size: 40px;
     padding: 10px 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 /* === Sección de Inscripciones === */
@@ -419,4 +418,5 @@ footer p {
         right: 20px;
         font-size: 20px;
     }
+
 }
